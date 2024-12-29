@@ -54,12 +54,12 @@ public class PayboxSdk: SignHelper, PayboxSdkProtocol, ApiProtocol  {
             return
         }
         
-        let header = paymentData?[Params.TAG_HEADER] as! [String: Any]
+        let header = paymentData[Params.TAG_HEADER] as! [String: Any]
         
         var params = [String: String]()
-        params[Params.TAG_PAYMENT_DATA] = paymentData?[Params.TAG_DATA] as? String ?? ""
-        params[Params.TAG_PAYMENT_SIGNATURE] = paymentData?[Params.TAG_SIGNATURE] as? String ?? ""
-        params[Params.TAG_PAYMENT_ENCRYPTION] = paymentData?[Params.TAG_VERSION] as? String ?? ""
+        params[Params.TAG_PAYMENT_DATA] = paymentData[Params.TAG_DATA] as? String ?? ""
+        params[Params.TAG_PAYMENT_SIGNATURE] = paymentData[Params.TAG_SIGNATURE] as? String ?? ""
+        params[Params.TAG_PAYMENT_ENCRYPTION] = paymentData[Params.TAG_VERSION] as? String ?? ""
         params[Params.TAG_PAYMENT_PUBLIC_KEY] = header[Params.TAG_PUBLICK_KEY] as? String ?? ""
         params[Params.TAG_PAYMENT_PUBLIC_KEY_HASH] = header[Params.TAG_PUBLIC_KEY_HASH] as? String ?? ""
         params[Params.TAG_PAYMENT_TRANSACTION_ID] = header[Params.TAG_TRANSACTION_ID] as? String ?? ""

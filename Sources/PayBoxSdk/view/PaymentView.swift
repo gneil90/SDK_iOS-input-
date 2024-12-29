@@ -1,5 +1,8 @@
 
 import WebKit
+#if canImport(UIKit)
+import UIKit
+
 open class PaymentView: UIView, WKNavigationDelegate {
     
     public override init(frame: CGRect) {
@@ -118,3 +121,4 @@ public protocol WebDelegate {
     func loadStarted()
     func loadFinished()
 }
+#endif

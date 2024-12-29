@@ -215,7 +215,7 @@ extension String {
             return false
         }
         
-        let data = paymentData?[Params.TAG_DATA] as? [String: Any]
+        let data = paymentData[Params.TAG_DATA] as? [String: Any]
         let status = data?[Params.TAG_STATUS] as? String
         
         return status == Params.STATUS_OK
@@ -228,7 +228,7 @@ extension String {
             )
         }
         
-        let data = paymentData?[Params.TAG_DATA] as? [String: Any]
+        let data = paymentData[Params.TAG_DATA] as? [String: Any]
         let status = data?[Params.TAG_STATUS] as? String ?? ""
         let backUrl = data?[Params.TAG_BACK_URL] as? [String: Any]
         let url = backUrl?[Params.TAG_URL] as? String ?? ""
@@ -250,7 +250,7 @@ extension String {
             return Error(errorCode: 0, description: Params.FORMAT_ERROR)
         }
         
-        let data = paymentData?[Params.TAG_DATA] as? [String: Any]
+        let data = paymentData[Params.TAG_DATA] as? [String: Any]
         let code = data?[Params.TAG_CODE] as? Int ?? 0
         let message = data?[Params.TAG_MESSAGE] as? String ?? Params.PAYMENT_ERROR
         

@@ -10,7 +10,7 @@ open class SignHelper {
     }
     internal func signedParams(url: String, array: [String:String])-> [(key: String, value: String)] {
         var params = array;
-        var urlPath = url.split(separator: "/")
+        let urlPath = url.split(separator: "/")
         params.updateValue(randomSalt, forKey: "pg_salt")
         var sortedParams = params.sorted(by: { $0.key < $1.key })
         sortedParams.append(("pg_sig", sig(secretKey: secretKey, url: String(urlPath[urlPath.count-1]), param: sortedParams)))
