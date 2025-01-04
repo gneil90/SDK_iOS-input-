@@ -76,7 +76,8 @@ open class PaymentView: UIView, WKNavigationDelegate {
     }
     
     open override func layoutSubviews() {
-        return
+        super.layoutSubviews()
+        webView.frame = bounds
     }
     
     open override func addSubview(_ view: UIView) {
